@@ -2,148 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Luau Script</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <title>???</title>
     <style>
         body {
-            background-image: url('background.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            font-family: Arial, sans-serif;
+            height: 100vh; 
             margin: 0;
-            padding: 0;
-            color: white;
-        }
-        .container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .terminal-container {
-            background-color: #0c1017;
-            border: 1px solid #30363d;
-            padding: 25px;
-            border-radius: 12px;
-            max-width: 550px;
-            width: 90%;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            text-align: left;
-        }
-        .terminal-header {
-            color: #8b949e;
-            font-size: 13px;
-            font-family: monospace;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #21262d;
-            padding-bottom: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .code-block {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 15px;
-            line-height: 1.6;
-            white-space: pre-wrap;
-            margin-bottom: 20px;
-        }
-        .keyword { color: #ff7b72; } 
-        .service { color: #79c0ff; } 
-        .string { color: #a5d6ff; }  
-        .comment { color: #8b949e; } 
-        
-        /* The Interactive Run Button */
-        .run-btn {
-            background-color: #238636; /* Roblox / GitHub style green */
-            color: white;
-            border: none;
-            padding: 6px 16px;
-            font-size: 13px;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            font-family: sans-serif;
-            transition: background 0.2s;
-        }
-        .run-btn:hover {
-            background-color: #2ea043;
-        }
-        
-        .console-output {
-            background-color: #040609;
-            border: 1px solid #21262d;
-            border-radius: 6px;
-            padding: 15px;
-            font-family: monospace;
-            font-size: 14px;
-            min-height: 80px;
-            color: #8b949e;
-        }
-        .log-info { color: #58a6ff; }
-        .log-success { color: #56d364; font-weight: bold; }
-        .number-output { 
-            color: #d2a8ff; 
-            background-color: #1f242c;
-            padding: 2px 6px;
-            border-radius: 4px;
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="terminal-container">
-            <div class="terminal-header">
-                <span>Luau Script // getUserId.lua</span>
-                <!-- The Run Button -->
-                <button class="run-btn" onclick="runLuauCode()">▶ Run Script</button>
-            </div>
-            
-            <!-- Code Block Display -->
-            <div class="code-block">
-<span class="keyword">local</span> Players = <span class="service">game</span>:GetService(<span class="string">"Players"</span>)
 
-<span class="comment">-- Fetching current database identity string</span>
-<span class="keyword">local</span> success, userId = pcall(<span class="keyword">function</span>()
-    <span class="keyword">return</span> Players:GetUserIdFromUsernameAsync(<span class="string">"CoolXGamer14"</span>)
-<span class="keyword">end</span>)
+    <h1>11166159427</h1>
 
-<span class="keyword">if</span> success <span class="keyword">then</span>
-    print(<span class="string">"Target UserID Found: "</span> .. userId)
-<span class="keyword">else</span>
-    warn(<span class="string">"Failed to retrieve secure handshake datastream."</span>)
-<span class="keyword">end</span></div>
-
-            <!-- Console Output Area -->
-            <div class="console-output" id="consoleBox">
-                Click "Run Script" to execute the codebase...
-            </div>
-        </div>
-    </div>
-
-    <!-- Script that handles the terminal animation -->
-    <script>
-        function runLuauCode() {
-            var output = document.getElementById("consoleBox");
-            output.innerHTML = ""; // Clear default message
-            
-            // Step 1: Initialization log
-            setTimeout(function() {
-                output.innerHTML += '<div class="log-info">[INFO] Initializing Luau VM Environment...</div>';
-            }, 200);
-
-            // Step 2: Connection request log
-            setTimeout(function() {
-                output.innerHTML += '<div class="log-info">[INFO] Requesting token handshakes from Roblox HTTP API...</div>';
-            }, 1000);
-
-            // Step 3: Success and Code Output (Change your 6-digit number right here)
-            setTimeout(function() {
-                output.innerHTML += '<div class="log-success">[SUCCESS] Target UserID Found: <span class="number-output">953108</span></div>';
-            }, 2200);
-        }
-    </script>
 </body>
 </html>
