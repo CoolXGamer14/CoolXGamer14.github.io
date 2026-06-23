@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Terminal Link Established</title>
+    <title>GetUserID</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
         body {
@@ -20,44 +20,64 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            margin-top: 100px;
+            margin-top: 80px;
         }
-        .code-container {
-            background-color: rgba(20, 20, 30, 0.75);
-            backdrop-filter: blur(10px);
-            border: 2px solid #4da6ff;
-            padding: 40px;
-            border-radius: 15px;
-            max-width: 400px;
-            width: 85%;
-            box-shadow: 0 0 30px rgba(77, 166, 255, 0.3);
+        .terminal-container {
+            background-color: #0c1017;
+            border: 1px solid #30363d;
+            padding: 25px;
+            border-radius: 12px;
+            max-width: 550px;
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: left;
         }
-        h1 {
-            color: #4da6ff;
-            font-size: 24px;
-            margin-top: 0;
-            margin-bottom: 25px;
-            letter-spacing: 1px;
+        .terminal-header {
+            color: #8b949e;
+            font-size: 13px;
+            font-family: monospace;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #21262d;
+            padding-bottom: 8px;
         }
-        .number-box {
-            background-color: #0d0d13;
-            border: 1px solid #222533;
-            color: #ff4d4d;
+        .code-block {
             font-family: 'Courier New', Courier, monospace;
-            font-size: 36px;
-            font-weight: bold;
-            padding: 20px;
-            border-radius: 8px;
-            letter-spacing: 6px;
+            font-size: 16px;
+            line-height: 1.6;
+            white-space: pre-wrap;
         }
+        .keyword { color: #ff7b72; }
+        .service { color: #79c0ff; }
+        .string { color: #a5d6ff; }
+        .comment { color: #8b949e; }
+        .number-output { 
+            color: #d2a8ff;
+            font-weight: bold;
+            background-color: #1f242c;
+            padding: 2px 6px;
+            border-radius: 4px;
+        } 
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="code-container">
-            <h1>DATA LINK FOUND</h1>
-          
-            <div class="number-box">953108</div>
+        <div class="terminal-container">
+            <div class="terminal-header">🔴 Luau Core Console // execution_logs.lua</div>
+            
+            <div class="code-block">
+<span class="keyword">local</span> Players = <span class="service">game</span>:GetService(<span class="string">"Players"</span>)
+
+<span class="comment">-- Fetching current database identity string</span>
+<span class="keyword">local</span> success, userId = pcall(<span class="keyword">function</span>()
+    <span class="keyword">return</span> Players:GetUserIdFromUsernameAsync(<span class="string">"CoolXGamer14"</span>)
+<span class="keyword">end</span>)
+
+<span class="keyword">if</span> success <span class="keyword">then</span>
+    print(<span class="string">"Target UserID Found: "</span> .. <span class="number-output">953108</span>)
+<span class="keyword">else</span>
+    warn(<span class="string">"Failed to retrieve secure handshake datastream."</span>)
+<span class="keyword">end</span></div>
+
         </div>
     </div>
 </body>
